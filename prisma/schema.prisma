@@ -1,0 +1,163 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model ShopSettings {
+  id              String  @id @default("default")
+  announcement    String  @default("")
+  paused          Boolean @default(false)
+  maxOpenOrders   Int     @default(10)
+  upiId           String  @default("")
+  depositNote     String  @default("")
+  whatsappNumber  String  @default("918884558657")
+  shippingRules   String  @default("{}")
+  instagramLinks  String  @default("[]")
+  aboutContent    String  @default("")
+  shopName        String  @default("LOL")
+  shopTagline     String  @default("Made by me, made for you")
+}
+
+model Product {
+  id             String           @id @default(cuid())
+  title          String
+  slug           String           @unique
+  subtitle       String           @default("")
+  description    String           @default("")
+  category       String           @default("Other")
+  tags           String           @default("[]")
+  bullets        String           @default("[]")
+  materials      String           @default("{}")
+  care           String           @default("")
+  dimensions     String           @default("")
+  weight         String           @default("")
+  price          Int
+  compareAtPrice Int?
+  maxQty         Int              @default(5)
+  leadTimeDays   Int              @default(14)
+  featured       Boolean          @default(false)
+  status         String           @default("draft")
+  viewCount      Int              @default(0)
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  images         ProductImage[]
+  variants       ProductVariant[]
+  relatedFrom    RelatedProduct[] @relation("ProductRelated")
+  relatedTo      RelatedProduct[] @relation("RelatedTarget")
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url       String
+  alt       String  @default("")
+  sortOrder Int     @default(0)
+}
+
+model ProductVariant {
+  id            String  @id @default(cuid())
+  productId     String
+  product       Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  color         String  @default("")
+  size          String  @default("")
+  sku           String  @default("")
+  priceOverride Int?
+}
+
+model RelatedProduct {
+  id        String  @id @default(cuid())
+  productId String
+  relatedId String
+  product   Product @relation("ProductRelated", fields: [productId], references: [id], onDelete: Cascade)
+  related   Product @relation("RelatedTarget", fields: [relatedId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, relatedId])
+}
+
+model Order {
+  id            String      @id @default(cuid())
+  orderNumber   String      @unique
+  publicToken   String      @unique
+  customerName  String
+  customerPhone String
+  addressLine   String
+  city          String
+  state         String
+  pincode       String
+  giftMessage   String      @default("")
+  notes         String      @default("")
+  couponCode    String?
+  discount      Int         @default(0)
+  shippingFee   Int         @default(0)
+  subtotal      Int
+  total         Int
+  status        String      @default("new")
+  whatsappText  String      @default("")
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  items         OrderItem[]
+}
+
+model OrderItem {
+  id           String @id @default(cuid())
+  orderId      String
+  order        Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId    String?
+  productTitle String
+  variantLabel String @default("")
+  qty          Int
+  unitPrice    Int
+  imageUrl     String @default("")
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  quote     String
+  name      String
+  photoUrl  String?
+  published Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model Coupon {
+  id        String    @id @default(cuid())
+  code      String    @unique
+  type      String    @default("percent")
+  value     Int
+  active    Boolean   @default(true)
+  expiresAt DateTime?
+}
+
+model GuidePage {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  title     String
+  content   String
+  published Boolean  @default(true)
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+}
+
+model PolicyPage {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  title     String
+  content   String
+  published Boolean  @default(true)
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+}

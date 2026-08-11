@@ -1,0 +1,468 @@
+{
+  "firstDocMs": 9450,
+  "firstJsStart": 1171.4000000953674,
+  "first3dStart": 1189.3000000715256,
+  "deferred3d": true,
+  "threeishCount": 9,
+  "count": 48,
+  "threeish": [
+    {
+      "name": "/_next/static/chunks/src_components_hero_Hero3D_tsx_7a71efa9._.js",
+      "start": 1189.3000000715256,
+      "end": 1685.6000000238419,
+      "duration": 496.2999999523163,
+      "kind": "3d",
+      "transferSize": 756
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_three_build_three_core_996ef05a.js",
+      "start": 2678.3000000715256,
+      "end": 3071.100000023842,
+      "duration": 392.7999999523163,
+      "kind": "3d",
+      "transferSize": 291410
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_three_build_three_module_0c59ee63.js",
+      "start": 2679.3000000715256,
+      "end": 2969.100000023842,
+      "duration": 289.7999999523163,
+      "kind": "3d",
+      "transferSize": 132315
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_three_build_three_module_f7d46d9b.js",
+      "start": 2680,
+      "end": 2734,
+      "duration": 54,
+      "kind": "3d",
+      "transferSize": 4830
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_%40react-three_fiber_dist_65467093._.js",
+      "start": 2680.8000000715256,
+      "end": 2992.3000000715256,
+      "duration": 311.5,
+      "kind": "3d",
+      "transferSize": 155314
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_three-stdlib_daf94f41._.js",
+      "start": 2681.5,
+      "end": 2778.7000000476837,
+      "duration": 97.20000004768372,
+      "kind": "3d",
+      "transferSize": 51580
+    },
+    {
+      "name": "/_next/static/chunks/src_components_hero_Hero3D_tsx_ba2d2893._.js",
+      "start": 2682.8000000715256,
+      "end": 2897.600000023842,
+      "duration": 214.79999995231628,
+      "kind": "3d",
+      "transferSize": 5040
+    },
+    {
+      "name": "/_next/static/chunks/src_components_hero_Hero3D_tsx_791bb08b._.js",
+      "start": 2683.4000000953674,
+      "end": 2935.4000000953674,
+      "duration": 252,
+      "kind": "3d",
+      "transferSize": 950
+    },
+    {
+      "name": "/pmndrs/drei-assets/456060a26bbeb8fdf79326f224b6d99b8bcce736/hdri/lebombo_1k.hdr",
+      "start": 3499,
+      "end": 5149.5,
+      "duration": 1650.5,
+      "kind": "3d",
+      "transferSize": 0
+    }
+  ],
+  "entries": [
+    {
+      "name": "/_next/static/media/03bda585a99c6450-s.p.ad37b9d9.woff2",
+      "start": 1170.6000000238419,
+      "end": 1199.3000000715256,
+      "duration": 28.700000047683716,
+      "kind": "other",
+      "transferSize": 36860
+    },
+    {
+      "name": "/_next/static/media/47df9ba1c7236d3b-s.p.7bbb93ea.woff2",
+      "start": 1171.2000000476837,
+      "end": 1243.8000000715256,
+      "duration": 72.60000002384186,
+      "kind": "other",
+      "transferSize": 29092
+    },
+    {
+      "name": "/_next/static/media/a85fe84266768609-s.p.e658778d.woff2",
+      "start": 1171.3000000715256,
+      "end": 1253.2000000476837,
+      "duration": 81.89999997615814,
+      "kind": "other",
+      "transferSize": 74872
+    },
+    {
+      "name": "/_next/static/chunks/%5Broot-of-the-server%5D__3393f71a._.css",
+      "start": 1171.4000000953674,
+      "end": 1233.2000000476837,
+      "duration": 61.799999952316284,
+      "kind": "js",
+      "transferSize": 12662
+    },
+    {
+      "name": "/assets/hero/hero-workspace-background.png",
+      "start": 1187.2000000476837,
+      "end": 2025.6000000238419,
+      "duration": 838.3999999761581,
+      "kind": "other",
+      "transferSize": 7729472
+    },
+    {
+      "name": "/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_57d40746._.js",
+      "start": 1187.4000000953674,
+      "end": 1312.6000000238419,
+      "duration": 125.19999992847443,
+      "kind": "js",
+      "transferSize": 971
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "start": 1187.5,
+      "end": 1388.2000000476837,
+      "duration": 200.70000004768372,
+      "kind": "js",
+      "transferSize": 156600
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_a9cb0712.js",
+      "start": 1187.6000000238419,
+      "end": 1509.1000000238419,
+      "duration": 321.5,
+      "kind": "js",
+      "transferSize": 266960
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_next_dist_compiled_5150ccfd._.js",
+      "start": 1187.7000000476837,
+      "end": 1537.1000000238419,
+      "duration": 349.39999997615814,
+      "kind": "js",
+      "transferSize": 50458
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_next_dist_client_cf1d9188._.js",
+      "start": 1187.7000000476837,
+      "end": 1581.4000000953674,
+      "duration": 393.7000000476837,
+      "kind": "js",
+      "transferSize": 91673
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_next_dist_b0daae9a._.js",
+      "start": 1187.8000000715256,
+      "end": 1514.4000000953674,
+      "duration": 326.60000002384186,
+      "kind": "js",
+      "transferSize": 33073
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_%40swc_helpers_cjs_b3dc30d6._.js",
+      "start": 1187.9000000953674,
+      "end": 1524.9000000953674,
+      "duration": 337,
+      "kind": "js",
+      "transferSize": 1276
+    },
+    {
+      "name": "/_next/static/chunks/_a0ff3932._.js",
+      "start": 1188.5,
+      "end": 1531,
+      "duration": 342.5,
+      "kind": "js",
+      "transferSize": 991
+    },
+    {
+      "name": "/_next/static/chunks/turbopack-_cdba956c._.js",
+      "start": 1188.6000000238419,
+      "end": 1568.4000000953674,
+      "duration": 379.8000000715256,
+      "kind": "js",
+      "transferSize": 18414
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_next_dist_8db7fb1f._.js",
+      "start": 1188.7000000476837,
+      "end": 1605.7000000476837,
+      "duration": 417,
+      "kind": "js",
+      "transferSize": 22031
+    },
+    {
+      "name": "/_next/static/chunks/src_app_favicon_ico_mjs_243aa161._.js",
+      "start": 1188.8000000715256,
+      "end": 1555.3000000715256,
+      "duration": 366.5,
+      "kind": "js",
+      "transferSize": 562
+    },
+    {
+      "name": "/_next/static/chunks/_274c95cd._.js",
+      "start": 1189,
+      "end": 1618.8000000715256,
+      "duration": 429.8000000715256,
+      "kind": "js",
+      "transferSize": 27760
+    },
+    {
+      "name": "/_next/static/chunks/src_app_layout_tsx_0a548d63._.js",
+      "start": 1189.1000000238419,
+      "end": 1612.6000000238419,
+      "duration": 423.5,
+      "kind": "js",
+      "transferSize": 596
+    },
+    {
+      "name": "xt/static/chunks/node_modules_next_dist_client_components_builtin_global-error_eb47dbf0.js",
+      "start": 1189.3000000715256,
+      "end": 1666.8000000715256,
+      "duration": 477.5,
+      "kind": "js",
+      "transferSize": 506
+    },
+    {
+      "name": "/_next/static/chunks/src_components_hero_Hero3D_tsx_7a71efa9._.js",
+      "start": 1189.3000000715256,
+      "end": 1685.6000000238419,
+      "duration": 496.2999999523163,
+      "kind": "3d",
+      "transferSize": 756
+    },
+    {
+      "name": "/_next/static/chunks/src_889c5383._.js",
+      "start": 1189.5,
+      "end": 1768,
+      "duration": 578.5,
+      "kind": "js",
+      "transferSize": 15564
+    },
+    {
+      "name": "/_next/static/chunks/src_app_page_tsx_eb47dbf0._.js",
+      "start": 1189.6000000238419,
+      "end": 1699.6000000238419,
+      "duration": 510,
+      "kind": "js",
+      "transferSize": 658
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_next_72418f3e._.js",
+      "start": 1189.6000000238419,
+      "end": 1769.8000000715256,
+      "duration": 580.2000000476837,
+      "kind": "js",
+      "transferSize": 29491
+    },
+    {
+      "name": "/assets/hero/hero-background.webp",
+      "start": 1189.8000000715256,
+      "end": 1285.9000000953674,
+      "duration": 96.10000002384186,
+      "kind": "other",
+      "transferSize": 61694
+    },
+    {
+      "name": "/assets/hero/hero-fallback.webp",
+      "start": 1190.1000000238419,
+      "end": 1300.3000000715256,
+      "duration": 110.20000004768372,
+      "kind": "other",
+      "transferSize": 63144
+    },
+    {
+      "name": "/assets/textures/yarn-texture-sm.webp",
+      "start": 1275.3000000715256,
+      "end": 1766.7000000476837,
+      "duration": 491.39999997615814,
+      "kind": "other",
+      "transferSize": 16836
+    },
+    {
+      "name": "/_next/static/media/e285ad1a914469f0-s.2df16460.woff2",
+      "start": 1425.8000000715256,
+      "end": 1527.9000000953674,
+      "duration": 102.10000002384186,
+      "kind": "other",
+      "transferSize": 60348
+    },
+    {
+      "name": "/assets/categories/toys.webp",
+      "start": 1495.7000000476837,
+      "end": 1778.1000000238419,
+      "duration": 282.39999997615814,
+      "kind": "other",
+      "transferSize": 26872
+    },
+    {
+      "name": "/assets/categories/bags.webp",
+      "start": 1495.8000000715256,
+      "end": 1783.3000000715256,
+      "duration": 287.5,
+      "kind": "other",
+      "transferSize": 7660
+    },
+    {
+      "name": "/assets/categories/accessories.webp",
+      "start": 1495.9000000953674,
+      "end": 1831.9000000953674,
+      "duration": 336,
+      "kind": "other",
+      "transferSize": 11602
+    },
+    {
+      "name": "/assets/categories/wall-decor.webp",
+      "start": 1495.9000000953674,
+      "end": 1839.3000000715256,
+      "duration": 343.39999997615814,
+      "kind": "other",
+      "transferSize": 27326
+    },
+    {
+      "name": "/assets/categories/wearables.webp",
+      "start": 1496.1000000238419,
+      "end": 1841.5,
+      "duration": 345.39999997615814,
+      "kind": "other",
+      "transferSize": 9024
+    },
+    {
+      "name": "/placeholders/bunny.svg",
+      "start": 1496.1000000238419,
+      "end": 1847.8000000715256,
+      "duration": 351.7000000476837,
+      "kind": "other",
+      "transferSize": 957
+    },
+    {
+      "name": "/placeholders/scarf.svg",
+      "start": 1496.3000000715256,
+      "end": 1852,
+      "duration": 355.6999999284744,
+      "kind": "other",
+      "transferSize": 885
+    },
+    {
+      "name": "/placeholders/coaster.svg",
+      "start": 1496.3000000715256,
+      "end": 1869.6000000238419,
+      "duration": 373.2999999523163,
+      "kind": "other",
+      "transferSize": 785
+    },
+    {
+      "name": "/placeholders/bag.svg",
+      "start": 1496.8000000715256,
+      "end": 1875.2000000476837,
+      "duration": 378.39999997615814,
+      "kind": "other",
+      "transferSize": 968
+    },
+    {
+      "name": "/api/auth/session",
+      "start": 2520.4000000953674,
+      "end": 3517.8000000715256,
+      "duration": 997.3999999761581,
+      "kind": "other",
+      "transferSize": 304
+    },
+    {
+      "name": "/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "start": 2528.8000000715256,
+      "end": 2563.4000000953674,
+      "duration": 34.60000002384186,
+      "kind": "js",
+      "transferSize": 4307
+    },
+    {
+      "name": "/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_285433b7._.js",
+      "start": 2529.9000000953674,
+      "end": 2550.7000000476837,
+      "duration": 20.799999952316284,
+      "kind": "js",
+      "transferSize": 588
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_three_build_three_core_996ef05a.js",
+      "start": 2678.3000000715256,
+      "end": 3071.100000023842,
+      "duration": 392.7999999523163,
+      "kind": "3d",
+      "transferSize": 291410
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_three_build_three_module_0c59ee63.js",
+      "start": 2679.3000000715256,
+      "end": 2969.100000023842,
+      "duration": 289.7999999523163,
+      "kind": "3d",
+      "transferSize": 132315
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_three_build_three_module_f7d46d9b.js",
+      "start": 2680,
+      "end": 2734,
+      "duration": 54,
+      "kind": "3d",
+      "transferSize": 4830
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_%40react-three_fiber_dist_65467093._.js",
+      "start": 2680.8000000715256,
+      "end": 2992.3000000715256,
+      "duration": 311.5,
+      "kind": "3d",
+      "transferSize": 155314
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_three-stdlib_daf94f41._.js",
+      "start": 2681.5,
+      "end": 2778.7000000476837,
+      "duration": 97.20000004768372,
+      "kind": "3d",
+      "transferSize": 51580
+    },
+    {
+      "name": "/_next/static/chunks/node_modules_307eb488._.js",
+      "start": 2682.100000023842,
+      "end": 2835.600000023842,
+      "duration": 153.5,
+      "kind": "js",
+      "transferSize": 47838
+    },
+    {
+      "name": "/_next/static/chunks/src_components_hero_Hero3D_tsx_ba2d2893._.js",
+      "start": 2682.8000000715256,
+      "end": 2897.600000023842,
+      "duration": 214.79999995231628,
+      "kind": "3d",
+      "transferSize": 5040
+    },
+    {
+      "name": "/_next/static/chunks/src_components_hero_Hero3D_tsx_791bb08b._.js",
+      "start": 2683.4000000953674,
+      "end": 2935.4000000953674,
+      "duration": 252,
+      "kind": "3d",
+      "transferSize": 950
+    },
+    {
+      "name": "/pmndrs/drei-assets/456060a26bbeb8fdf79326f224b6d99b8bcce736/hdri/lebombo_1k.hdr",
+      "start": 3499,
+      "end": 5149.5,
+      "duration": 1650.5,
+      "kind": "3d",
+      "transferSize": 0
+    }
+  ]
+}

@@ -33,9 +33,26 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# local databases
+*.db
+*.db-journal
+prisma/dev.db
+prisma/*.db
+
+# user uploads
+/public/uploads/
+
+# oversized 3D (GitHub 100MB limit) — keep locally under assets/3d & public/assets/3d
+**/spiderman.glb
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local QA / noise
+e2e-results.csv
+docs/screenshots/*.report.json
+docs/screenshots/sprint-8-lighthouse.report.html

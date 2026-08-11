@@ -1,0 +1,24 @@
+{
+  "accessibilityScore": 0.92,
+  "category": "Accessibility",
+  "fails": [
+    {
+      "id": "aria-hidden-focus",
+      "title": "`[aria-hidden=\"true\"]` elements contain focusable descendents",
+      "fixApplied": "Mobile menu sheet now uses inert + visibility:hidden when closed"
+    },
+    {
+      "id": "color-contrast",
+      "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+      "note": "Soft brown-on-cream brand tokens; not changed to preserve visual system"
+    }
+  ],
+  "reports": {
+    "html": "docs/screenshots/sprint-8-lighthouse.report.html",
+    "json": "docs/screenshots/sprint-8-lighthouse.report.json"
+  },
+  "buildLog": "docs/screenshots/sprint-8-build.log",
+  "seoHome": "docs/screenshots/sprint-8-seo-home.json",
+  "seoProduct": "docs/screenshots/sprint-8-seo-product.json",
+  "ecomA11y": "docs/screenshots/sprint-8-ecom-a11y.json"
+}

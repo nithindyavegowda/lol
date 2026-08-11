@@ -1,26 +1,463 @@
 @import "tailwindcss";
 
+/**
+ * Sprint 1 — Foundation
+ * COLOR SYSTEM (strict)
+ * Pink (#E98F98) is ACCENT only — CTAs, active states, highlights.
+ * Page canvas stays cream. Text stays espresso.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #f8f1eb;
+  --cream-light: #fff9f5;
+  --espresso: #30231f;
+  --brown: #8b6755;
+  --lol-pink: #e98f98;
+  --pink-light: #f7d9dc;
+  --pink-soft: #fbeaec;
+  --white: #ffffff;
+
+  /* Legacy aliases for existing components / admin */
+  --color-chocolate: var(--espresso);
+  --color-aloewood: var(--brown);
+  --color-milk-tea: #aa7f66;
+  --color-sakura: var(--lol-pink);
+  --color-misty-rose: var(--cream);
+
+  /* Shape language — soft, not dashed / not glass-heavy */
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.75rem;
+  --radius-pill: 999px;
+  --radius-card: var(--radius-md);
+
+  --shadow-soft: 0 10px 30px rgba(48, 35, 31, 0.06);
+  --shadow-float: 0 16px 40px rgba(48, 35, 31, 0.08);
+  --nav-height: 4rem;
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-hand: "Caveat", "Segoe Print", cursive;
+
+  --space-section-y: 4.5rem;
+  --space-section-x: 1.25rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.2, 0.64, 1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-cream-light: var(--cream-light);
+  --color-espresso: var(--espresso);
+  --color-brown: var(--brown);
+  --color-lol-pink: var(--lol-pink);
+  --color-pink-light: var(--pink-light);
+  --color-pink-soft: var(--pink-soft);
+  --color-chocolate: var(--espresso);
+  --color-aloewood: var(--brown);
+  --color-milk-tea: #aa7f66;
+  --color-sakura: var(--lol-pink);
+  --color-misty-rose: var(--cream);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--cream);
+  color: var(--espresso);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* One continuous cream canvas — no pink wash over the whole site */
+body {
+  background-color: var(--cream);
+  background-image: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ——— Typography ——— */
+.font-display,
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 550;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--espresso);
+}
+
+.font-hand,
+.annotation {
+  font-family: var(--font-hand);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.font-ui,
+nav,
+button,
+.btn-primary,
+.btn-secondary,
+input,
+label {
+  font-family: var(--font-body);
+}
+
+/* ——— Buttons (pink = accent CTA only) ——— */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--lol-pink);
+  color: var(--espresso);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.85rem 1.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 22px rgba(233, 143, 152, 0.28);
+  transition:
+    transform 0.25s var(--ease-spring),
+    box-shadow 0.2s var(--ease-out);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(233, 143, 152, 0.38);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--espresso);
+  outline-offset: 3px;
+}
+
+/* PHASE 20 — keyboard focus rings */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--lol-pink);
+  outline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--lol-pink);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+.lol-nav a:focus-visible,
+.lol-nav button:focus-visible {
+  outline-offset: 2px;
+  background: var(--pink-soft);
+}
+
+.custom-choice-chip:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: transparent;
+  color: var(--espresso);
+  border: 1px solid rgba(48, 35, 31, 0.16);
+  border-radius: var(--radius-pill);
+  padding: 0.85rem 1.35rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.25s var(--ease-spring);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(233, 143, 152, 0.7);
+  background: var(--pink-soft);
+  transform: translateY(-1px);
+}
+
+.btn-yarn:hover {
+  animation: yarn-bounce 0.55s var(--ease-spring);
+}
+
+@keyframes yarn-bounce {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.04) translateY(-2px);
+  }
+  100% {
+    transform: scale(1.02);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ——— Cards ——— */
+.product-tile {
+  border-radius: var(--radius-md);
+  background: var(--cream-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(48, 35, 31, 0.05);
+  transition:
+    transform 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out);
+}
+
+.product-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-float);
+}
+
+.product-tile:hover .thread-underline {
+  transform: scaleX(1);
+}
+
+.thread-underline {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--lol-pink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.wish-loop {
+  transition:
+    fill 0.25s ease,
+    transform 0.25s var(--ease-spring);
+}
+
+.wish-loop.is-on {
+  fill: var(--lol-pink);
+  transform: scale(1.08);
+}
+
+/* Soft border only — no dashed craft borders on storefront */
+.stitched {
+  border: 1px solid rgba(48, 35, 31, 0.1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.yarn-divider {
+  height: 1px;
+  width: min(10rem, 36%);
+  margin: 0 auto;
+  border: 0;
+  background: rgba(139, 103, 85, 0.35);
+}
+
+.texture-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+.wa-pulse {
+  animation: soft-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+/* ——— Floating navbar (PHASE 3) ——— */
+.lol-nav {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 50;
+  margin: 0.75rem auto 0;
+  width: calc(100% - 1.25rem);
+  max-width: 72rem;
+  border-radius: var(--radius-pill);
+  /* Light translucent cream — not heavy glassmorphism */
+  background: rgba(248, 241, 235, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(48, 35, 31, 0.07);
+  box-shadow: var(--shadow-soft);
+  transition:
+    padding 0.3s var(--ease-out),
+    background 0.3s ease;
+}
+
+.lol-nav.is-compact {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  background: rgba(248, 241, 235, 0.94);
+}
+
+.lol-wordmark {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--espresso);
+}
+
+.lol-mobile-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.5rem 2rem;
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    transform 0.4s var(--ease-out),
+    opacity 0.3s ease,
+    visibility 0.3s;
+}
+
+.lol-mobile-sheet.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.admin-shell {
+  background: var(--cream-light);
+  min-height: 100vh;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid rgba(48, 35, 31, 0.14);
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  color: var(--espresso);
+  font-family: var(--font-body);
+}
+
+.input:focus {
+  outline: 2px solid var(--lol-pink);
+  outline-offset: 2px;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+
+.section-pad {
+  padding: var(--space-section-y) var(--space-section-x);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --space-section-y: 6rem;
+    --space-section-x: 1.5rem;
+  }
+}
+
+.hero-status-card {
+  border-radius: var(--radius-md);
+  background: var(--cream-light);
+  border: 1px solid rgba(48, 35, 31, 0.07);
+  box-shadow: var(--shadow-soft);
+  padding: 0.9rem 1rem;
+}
+
+.annotation {
+  font-size: 1.05rem;
+  color: var(--brown);
+  opacity: 0.9;
+}
+
+/* Sprint 5 — collections mobile snap carousel */
+.collections-snap {
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.collections-snap::-webkit-scrollbar {
+  display: none;
+}
+
+.collections-snap > * {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn-yarn:hover,
+  .wa-pulse,
+  .product-tile,
+  .product-tile:hover,
+  .btn-primary,
+  .lol-mobile-sheet,
+  .collections-snap {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .product-tile:hover {
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* PHASE 17 — kill decorative motion loops */
+  .wa-pulse {
+    animation: none !important;
+  }
 }

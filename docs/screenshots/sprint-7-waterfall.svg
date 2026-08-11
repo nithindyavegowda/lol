@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1136" viewBox="0 0 960 1136">
+  <rect width="100%" height="100%" fill="#FFF9F5"/>
+  <text x="16" y="22" font-size="14" font-weight="600" font-family="Segoe UI,sans-serif" fill="#30231F">Sprint 7 — Network waterfall (Performance API)</text>
+  <text x="16" y="1124" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">Pink = 3D/GLB/R3F · Brown = JS · Milk tea = other · span 5150ms</text>
+  
+      <text x="16" y="56" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/media/03bda585a99c6450-s.p.a…</text>
+      <rect x="442.7588697960914" y="46" width="3.500067973579061" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="452.25893776967047" y="56" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">29ms @1171</text>
+      <text x="16" y="78" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/media/47df9ba1c7236d3b-s.p.7…</text>
+      <rect x="442.8320419516352" y="68" width="8.853830471885171" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="457.6858724235203" y="78" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">73ms @1171</text>
+      <text x="16" y="100" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/media/a85fe84266768609-s.p.e…</text>
+      <rect x="442.8442373133155" y="90" width="9.987998831930733" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="458.8322361452462" y="100" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">82ms @1171</text>
+      <text x="16" y="122" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/%5Broot-of-the-server…</text>
+      <rect x="442.85643267499574" y="112" width="7.536731715711161" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="456.3931643907069" y="122" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">62ms @1171</text>
+      <text x="16" y="144" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/assets/hero/hero-workspace-background.png</text>
+      <rect x="444.7832993552666" y="134" width="102.24588794737883" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="553.0291873026454" y="144" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">838ms @1187</text>
+      <text x="16" y="166" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/%5Bturbopack%5D_brows…</text>
+      <rect x="444.80769007862716" y="156" width="15.268589174693064" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="466.07627925332025" y="166" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">125ms @1187</text>
+      <text x="16" y="188" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_next_dis…</text>
+      <rect x="444.8198854257695" y="178" width="24.476085062616832" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="475.29597048838633" y="188" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">201ms @1188</text>
+      <text x="16" y="210" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_next_dis…</text>
+      <rect x="444.8320807874498" y="200" width="39.20807845421886" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="490.0401592416687" y="210" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">322ms @1188</text>
+      <text x="16" y="232" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_next_dis…</text>
+      <rect x="444.8442761491301" y="222" width="42.61058354889355" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="493.45485969802365" y="232" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">349ms @1188</text>
+      <text x="16" y="254" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_next_dis…</text>
+      <rect x="444.8442761491301" y="244" width="48.01312749392084" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="498.85740364305093" y="254" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">394ms @1188</text>
+      <text x="16" y="276" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_next_dis…</text>
+      <rect x="444.85647151081037" y="266" width="39.83004175453397" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="490.68651326534433" y="276" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">327ms @1188</text>
+      <text x="16" y="298" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_%40swc_h…</text>
+      <rect x="444.8686668724907" y="288" width="41.0983590639868" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="491.96702593647746" y="298" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">337ms @1188</text>
+      <text x="16" y="320" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/_a0ff3932._.js</text>
+      <rect x="444.94183901349646" y="310" width="41.76910379648509" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="492.71094280998153" y="320" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">343ms @1189</text>
+      <text x="16" y="342" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/turbopack-_cdba956c._…</text>
+      <rect x="444.9540343751768" y="332" width="46.31797262742364" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="497.2720070026004" y="342" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">380ms @1189</text>
+      <text x="16" y="364" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_next_dis…</text>
+      <rect x="444.96622973685703" y="354" width="50.8546460821439" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="501.82087581900095" y="364" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">417ms @1189</text>
+      <text x="16" y="386" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/src_app_favicon_ico_m…</text>
+      <rect x="444.97842509853734" y="376" width="44.69598990193223" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="495.6744150004696" y="386" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">367ms @1189</text>
+      <text x="16" y="408" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/_274c95cd._.js</text>
+      <rect x="445.00281580736" y="398" width="52.41565201377184" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="503.4184678211318" y="408" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">430ms @1189</text>
+      <text x="16" y="430" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/src_app_layout_tsx_0a…</text>
+      <rect x="445.01501116904024" y="420" width="51.647344402369164" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="502.6623555714094" y="430" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">424ms @1189</text>
+      <text x="16" y="452" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">xt/static/chunks/node_modules_next_dist_cl…</text>
+      <rect x="445.03940189240086" y="442" width="58.2328381396252" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="509.27224003202605" y="452" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">478ms @1189</text>
+      <text x="16" y="474" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/src_components_hero_H…</text>
+      <rect x="445.03940189240086" y="464" width="60.525565583076926" height="12" rx="3" fill="#E98F98" opacity="0.9"/>
+      <text x="511.5649674754778" y="474" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">496ms @1189</text>
+      <text x="16" y="496" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/src_889c5383._.js</text>
+      <rect x="445.06379260122344" y="486" width="70.55015050004855" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="521.613943101272" y="496" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">579ms @1190</text>
+      <text x="16" y="518" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/src_app_page_tsx_eb47…</text>
+      <rect x="445.0759879629037" y="508" width="62.19632974075153" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="513.2723177036553" y="518" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">510ms @1190</text>
+      <text x="16" y="540" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_next_724…</text>
+      <rect x="445.0759879629037" y="530" width="70.7574716049996" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="521.8334595679033" y="540" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">580ms @1190</text>
+      <text x="16" y="562" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/assets/hero/hero-background.webp</text>
+      <rect x="445.1003786862643" y="552" width="11.71973978346882" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="462.82011846973313" y="562" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">96ms @1190</text>
+      <text x="16" y="584" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/assets/hero/hero-fallback.webp</text>
+      <rect x="445.13696475676716" y="574" width="13.439285373326609" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="464.57625013009374" y="584" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">110ms @1190</text>
+      <text x="16" y="606" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/assets/textures/yarn-texture-sm.webp</text>
+      <rect x="455.5274104369197" y="596" width="59.9279930061224" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="521.4554034430421" y="606" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">491ms @1275</text>
+      <text x="16" y="628" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/media/e285ad1a914469f0-s.2df…</text>
+      <rect x="473.88142538982777" y="618" width="12.451461309830604" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="492.3328866996584" y="628" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">102ms @1426</text>
+      <text x="16" y="650" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/assets/categories/toys.webp</text>
+      <rect x="482.40598116903493" y="640" width="34.439693171186974" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="522.8456743402219" y="650" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">282ms @1496</text>
+      <text x="16" y="672" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/assets/categories/bags.webp</text>
+      <rect x="482.4181765307152" y="662" width="35.06165647150209" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="523.4798330022172" y="672" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">288ms @1496</text>
+      <text x="16" y="694" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/assets/categories/accessories.webp</text>
+      <rect x="482.43037189239556" y="684" width="40.976405476259835" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="529.4067773686554" y="694" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">336ms @1496</text>
+      <text x="16" y="716" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/assets/categories/wall-decor.webp</text>
+      <rect x="482.43037189239556" y="706" width="41.87886202253176" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="530.3092339149273" y="716" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">343ms @1496</text>
+      <text x="16" y="738" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/assets/categories/wearables.webp</text>
+      <rect x="482.45476260121814" y="728" width="42.12276919798569" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="530.5775317992038" y="738" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">345ms @1496</text>
+      <text x="16" y="760" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/placeholders/bunny.svg</text>
+      <rect x="482.45476260121814" y="750" width="42.89107680938836" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="531.3458394106065" y="760" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">352ms @1496</text>
+      <text x="16" y="782" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/placeholders/scarf.svg</text>
+      <rect x="482.47915332457876" y="772" width="43.37889114575822" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="531.858044470337" y="782" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">356ms @1496</text>
+      <text x="16" y="804" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/placeholders/coaster.svg</text>
+      <rect x="482.47915332457876" y="794" width="45.525274292660384" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="534.0044276172391" y="804" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">373ms @1496</text>
+      <text x="16" y="826" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/placeholders/bag.svg</text>
+      <rect x="482.54013011844216" y="816" width="46.14723759297549" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="534.6873677114177" y="826" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">378ms @1497</text>
+      <text x="16" y="848" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/api/auth/session</text>
+      <rect x="607.3718225186699" y="838" width="121.63650839596609" height="12" rx="3" fill="#AA7F66" opacity="0.9"/>
+      <text x="735.008330914636" y="848" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">997ms @2520</text>
+      <text x="16" y="870" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/%5Bturbopack%5D_brows…</text>
+      <rect x="608.3962326526688" y="860" width="4.219594138260547" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="618.6158267909293" y="870" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">35ms @2529</text>
+      <text x="16" y="892" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/%5Bturbopack%5D_brows…</text>
+      <rect x="608.5303816020761" y="882" width="2.5366346189056466" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="617.0670162209817" y="892" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">21ms @2530</text>
+      <text x="16" y="914" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_three_bu…</text>
+      <rect x="626.6282940178498" y="904" width="47.90336925333618" height="12" rx="3" fill="#E98F98" opacity="0.9"/>
+      <text x="680.5316632711861" y="914" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">393ms @2678</text>
+      <text x="16" y="936" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_three_bu…</text>
+      <rect x="626.7502476055769" y="926" width="35.3421497174589" height="12" rx="3" fill="#E98F98" opacity="0.9"/>
+      <text x="668.0923973230358" y="936" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">290ms @2679</text>
+      <text x="16" y="958" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_three_bu…</text>
+      <rect x="626.8356151082629" y="948" width="6.585493737256044" height="12" rx="3" fill="#E98F98" opacity="0.9"/>
+      <text x="639.4211088455189" y="958" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">54ms @2680</text>
+      <text x="16" y="980" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_%40react…</text>
+      <rect x="626.9331779871673" y="970" width="37.98854257694922" height="12" rx="3" fill="#E98F98" opacity="0.9"/>
+      <text x="670.9217205641165" y="980" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">312ms @2681</text>
+      <text x="16" y="1002" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_three-st…</text>
+      <rect x="627.0185454898533" y="992" width="11.853888732876081" height="12" rx="3" fill="#E98F98" opacity="0.9"/>
+      <text x="644.8724342227293" y="1002" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">97ms @2682</text>
+      <text x="16" y="1024" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/node_modules_307eb488…</text>
+      <rect x="627.0917176453972" y="1014" width="18.719875716088943" height="12" rx="3" fill="#8B6755" opacity="0.9"/>
+      <text x="651.8115933614862" y="1024" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">154ms @2682</text>
+      <text x="16" y="1046" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/src_components_hero_H…</text>
+      <rect x="627.1770851626212" y="1036" width="26.19563063793662" height="12" rx="3" fill="#E98F98" opacity="0.9"/>
+      <text x="659.3727158005578" y="1046" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">215ms @2683</text>
+      <text x="16" y="1068" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/_next/static/chunks/src_components_hero_H…</text>
+      <rect x="627.250257318165" y="1058" width="30.732304107194874" height="12" rx="3" fill="#E98F98" opacity="0.9"/>
+      <text x="663.9825614253599" y="1068" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">252ms @2683</text>
+      <text x="16" y="1090" font-size="11" font-family="Segoe UI,sans-serif" fill="#30231F">/pmndrs/drei-assets/456060a26bbeb8fdf79326…</text>
+      <rect x="726.7156034566462" y="1080" width="201.28439654335372" height="12" rx="3" fill="#E98F98" opacity="0.9"/>
+      <text x="934" y="1090" font-size="10" font-family="Segoe UI,sans-serif" fill="#8B6755">1651ms @3499</text>
+</svg>

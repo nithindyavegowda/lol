@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LOL — Loops of Love
 
-## Getting Started
+Handmade crochet storefront. **Made by me, made for you.**
 
-First, run the development server:
+Premium 2026 homepage: floating nav, interactive 3D crochet hero (React Three Fiber), collections, and custom-order story — without changing checkout / WhatsApp / admin business logic.
+
+Asset map: [`docs/ASSET-MANIFEST.md`](docs/ASSET-MANIFEST.md) · preview: `/dev/assets`
+
+## Local start (port 1234)
+
+```bash
+# ensure Node is on PATH, then:
+cd C:\P\lol
+npm install
+npx prisma db push
+npx tsx prisma/seed.ts
+npm run build
+npm run start
+```
+
+Dev mode:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Storefront: http://localhost:1234  
+- Admin login: http://localhost:1234/admin/login  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Admin
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Email: `g.amie0311@gmail.com`
+- Password: `Ammu@0311`
+- WhatsApp orders: `8884558657` (`wa.me/918884558657`)
 
-## Learn More
+## Test coupons
 
-To learn more about Next.js, take a look at the following resources:
+- `LOVE10` — 10% off  
+- `WELCOME50` — ₹50 off  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Sample order status
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+http://localhost:1234/order/sample-status-token-lol-1001
 
-## Deploy on Vercel
+## Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Next.js 15 + TypeScript + Tailwind  
+- Prisma + SQLite (`prisma/dev.db`)  
+- NextAuth credentials (single admin)  
+- Local uploads in `public/uploads`  
+- Order email via Resend if `RESEND_API_KEY` is set; otherwise logged to console  
+- WhatsApp handoff via `wa.me`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Feature map
+
+Customer: shop search/filters, wishlist, featured, MTO lead times, custom request, guides, policies, Instagram gallery, testimonials, cart/checkout with gift message + coupons + shipping estimate, WhatsApp order + confirmation + status link.
+
+Admin: dashboard, products CRUD, CSV import, duplicate, image upload/reorder, orders/status, coupons, testimonials, settings (pause/capacity/UPI/WhatsApp/shipping), guides, policies, Instagram links.

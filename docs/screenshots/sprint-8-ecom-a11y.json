@@ -1,0 +1,20 @@
+{
+  "checkoutOk": true,
+  "ordersApi": {
+    "status": 200,
+    "whatsappNumber": "918884558657"
+  },
+  "a11y": {
+    "hamburgerAria": "Open menu",
+    "hamburgerControls": "_R_5b_",
+    "wishlistAria": "Wishlist",
+    "customChipCount": 5,
+    "customChipAria": "Choose Soft toy for custom order"
+  },
+  "focused": {
+    "tag": "BUTTON",
+    "aria": "Open menu",
+    "text": "",
+    "outline": "solid"
+  }
+}

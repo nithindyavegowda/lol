@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" fill="none" role="img" aria-label="Crochet hero poster">
+  <rect width="800" height="900" fill="#F8F1EB"/>
+  <defs>
+    <radialGradient id="g" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#F7D9DC"/>
+      <stop offset="100%" stop-color="#F8F1EB"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="900" fill="url(#g)"/>
+  <!-- yarn -->
+  <path d="M400 40 C400 120 400 180 400 260" stroke="#E98F98" stroke-width="6" stroke-linecap="round"/>
+  <!-- hook -->
+  <path d="M420 90 C450 100 460 130 445 150" stroke="#B0B4B8" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <rect x="430" y="50" width="18" height="55" rx="8" fill="#E98F98"/>
+  <!-- character body -->
+  <ellipse cx="400" cy="520" rx="140" ry="160" fill="#C62828"/>
+  <ellipse cx="400" cy="560" rx="70" ry="50" fill="#1565C0"/>
+  <!-- head -->
+  <circle cx="400" cy="340" r="95" fill="#C62828"/>
+  <!-- eyes -->
+  <ellipse cx="365" cy="330" rx="28" ry="32" fill="#FFF9F5"/>
+  <ellipse cx="435" cy="330" rx="28" ry="32" fill="#FFF9F5"/>
+  <circle cx="370" cy="332" r="10" fill="#30231F"/>
+  <circle cx="440" cy="332" r="10" fill="#30231F"/>
+  <!-- stitch suggestion -->
+  <path d="M280 480 Q400 500 520 480" stroke="#8B0000" stroke-width="3" opacity="0.35" fill="none"/>
+  <path d="M290 520 Q400 540 510 520" stroke="#8B0000" stroke-width="3" opacity="0.3" fill="none"/>
+  <text x="400" y="780" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#8B6755" font-style="italic">Almost there...</text>
+  <text x="400" y="820" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#30231F" letter-spacing="0.15em">LOL · HANDMADE</text>
+</svg>
