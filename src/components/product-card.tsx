@@ -26,7 +26,7 @@ export type ProductCardData = {
 export function ProductCard({ product }: { product: ProductCardData }) {
   const { toggle, has } = useWishlist();
   const on = has(product.id);
-  const primary = product.image || "/placeholders/bunny.svg";
+  const primary = product.image || "/assets/products/petal-motif.webp";
   const secondary = product.imageHover || product.image || primary;
 
   return (

@@ -104,7 +104,7 @@ export default async function ProductPage({
         <div>
           <div className="relative aspect-square stitched rounded-2xl overflow-hidden bg-[rgba(170,127,102,0.12)]">
             <Image
-              src={product.images[0]?.url || "/placeholders/bunny.svg"}
+              src={product.images[0]?.url || "/assets/products/petal-motif.webp"}
               alt={product.images[0]?.alt || product.title}
               fill
               priority

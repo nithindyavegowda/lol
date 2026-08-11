@@ -26,7 +26,10 @@ export default async function ShopPage({
   const maxPrice = sp.maxPrice ? Number(sp.maxPrice) : undefined;
 
   const allPublished = await prisma.product.findMany({
-    where: { status: "published" },
+    where: {
+      status: "published",
+      images: { some: { url: { startsWith: "/assets/products/" } } },
+    },
     include: {
       images: { orderBy: { sortOrder: "asc" }, take: 2 },
       variants: true,

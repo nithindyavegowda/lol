@@ -74,17 +74,39 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background: var(--cream);
+  background: var(--cream-light);
   color: var(--espresso);
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* One continuous cream canvas — no pink wash over the whole site */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-in {
+  animation: hero-in 0.55s var(--ease-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-in {
+    animation: none;
+  }
+}
+
+/* One continuous light cream canvas */
 body {
-  background-color: var(--cream);
+  background-color: var(--cream-light);
   background-image: none;
 }
 

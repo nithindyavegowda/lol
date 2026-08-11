@@ -215,17 +215,17 @@ export function CustomOrderCtaSection() {
   );
 }
 
-const IG_PLACEHOLDERS = [
-  { src: "/placeholders/bunny.svg", alt: "Crochet bunny in a home" },
-  { src: "/placeholders/bag.svg", alt: "Handmade bag on a table" },
-  { src: "/placeholders/flower.svg", alt: "Crochet flower accessory" },
-  { src: "/placeholders/coaster.svg", alt: "Wall decor in a living room" },
-  { src: "/placeholders/scarf.svg", alt: "Wearable draped at home" },
-  { src: "/placeholders/hat.svg", alt: "Handmade hat styled indoors" },
+const IG_PHOTOS = [
+  { src: "/assets/products/star-sling-bag.webp", alt: "Star Hero crochet sling" },
+  { src: "/assets/products/octopus-stack.webp", alt: "Pastel octopus stack" },
+  { src: "/assets/products/mint-frog.webp", alt: "Mint froggie buddy" },
+  { src: "/assets/products/honey-bee.webp", alt: "Honeybee amigurumi" },
+  { src: "/assets/products/jellyfish-trio.webp", alt: "Soft tide jellyfish trio" },
+  { src: "/assets/products/rainbow-throw.webp", alt: "Rainbow granny baby throw" },
 ] as const;
 
 /**
- * PHASE 12 — Instagram-style social proof gallery
+ * PHASE 12 — Instagram-style social proof gallery (real product photos)
  */
 export function InstagramGallerySection() {
   return (
@@ -244,8 +244,7 @@ export function InstagramGallerySection() {
               Real LOL pieces in real homes.
             </h2>
             <p className="mt-3 text-[var(--brown)] max-w-lg">
-              Soft proof from people who opened a parcel and smiled. Gallery photos coming soon —
-              placeholders for now.
+              Soft proof from pieces that left the hook — real yarn, real colour, real joy.
             </p>
           </div>
           <Link href="/instagram" className="btn-secondary self-start inline-flex items-center gap-2">
@@ -254,19 +253,18 @@ export function InstagramGallerySection() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3">
-          {IG_PLACEHOLDERS.map((item, i) => (
+          {IG_PHOTOS.map((item, i) => (
             <figure
               key={item.src + i}
-              className="relative overflow-hidden rounded-2xl bg-[rgba(139,103,85,0.1)] aspect-square"
+              className="relative overflow-hidden rounded-2xl bg-[rgba(139,103,85,0.06)] aspect-square"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
                 loading="lazy"
-                className="object-contain p-8 opacity-70"
+                className="object-cover"
                 sizes="(max-width:768px) 50vw, 33vw"
-                unoptimized
               />
               <figcaption className="absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-[rgba(48,35,31,0.55)] to-transparent">
                 <span className="text-[0.65rem] sm:text-xs font-semibold tracking-wide uppercase text-[var(--cream)]">

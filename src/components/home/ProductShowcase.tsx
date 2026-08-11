@@ -24,7 +24,7 @@ export function ProductShowcase({ products }: { products: ProductCardData[] }) {
       id="showcase"
       data-sprint="fresh-products"
       style={{
-        background: "linear-gradient(180deg, var(--cream-light) 0%, var(--cream) 100%)",
+        background: "linear-gradient(180deg, #FFF9F5 0%, #F8F1EB 100%)",
       }}
     >
       <div
