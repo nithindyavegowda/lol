@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Caveat, Fraunces, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
-import { prisma } from "@/lib/prisma";
+import { hasDatabaseUrl, prisma } from "@/lib/prisma";
 import { ChromeGate } from "@/components/chrome-gate";
 import { Providers } from "@/components/providers";
+
+export const dynamic = "force-dynamic";
 
 /** Editorial serif — headlines / brand */
 const display = Fraunces({
@@ -79,9 +81,23 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const settings = await prisma.shopSettings.findUnique({ where: { id: "default" } });
-  const whatsapp =
-    settings?.whatsappNumber || process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "918884558657";
+  let announcement = "";
+  let paused = false;
+  let whatsapp =
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "918884558657";
+
+  if (hasDatabaseUrl()) {
+    try {
+      const settings = await prisma.shopSettings.findUnique({
+        where: { id: "default" },
+      });
+      announcement = settings?.announcement || "";
+      paused = !!settings?.paused;
+      if (settings?.whatsappNumber) whatsapp = settings.whatsappNumber;
+    } catch {
+      // Build/runtime without reachable DB — fall back to env defaults
+    }
+  }
 
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${hand.variable}`}>
@@ -98,8 +114,8 @@ export default async function RootLayout({
       >
         <Providers>
           <ChromeGate
-            announcement={settings?.announcement || ""}
-            paused={!!settings?.paused}
+            announcement={announcement}
+            paused={paused}
             whatsapp={whatsapp}
           >
             {children}

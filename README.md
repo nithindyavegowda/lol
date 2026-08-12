@@ -41,9 +41,10 @@ npm run dev:host
 Deploy steps:
 
 1. Import `nithindyavegowda/lol` on Vercel  
-2. Set the env vars above  
+2. **Before first deploy**, add all env vars below (Production + Preview) — missing `DATABASE_URL` fails the build  
 3. Deploy — build runs `prisma generate && next build`  
-4. Seed once from your machine with the **same** `DATABASE_URL`: `npm run db:setup`
+4. Seed once from your machine with the **same** `DATABASE_URL`: `npm run db:setup`  
+5. After you know the real URL, set `NEXTAUTH_URL`, `AUTH_URL`, and `NEXT_PUBLIC_SITE_URL` to `https://your-app.vercel.app` and **Redeploy**
 
 Production locally:
 
