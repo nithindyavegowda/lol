@@ -260,9 +260,6 @@ export function SiteFooter() {
           <Link className="block hover:text-[var(--lol-pink)]" href="/instagram">
             Instagram
           </Link>
-          <Link className="block hover:text-[var(--lol-pink)]" href="/admin/login">
-            Admin
-          </Link>
         </div>
       </div>
       <div className="relative border-t border-white/10">

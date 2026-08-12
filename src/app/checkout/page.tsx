@@ -38,6 +38,8 @@ export default function CheckoutPage() {
   const [giftMessage, setGiftMessage] = useState("");
   const [notes, setNotes] = useState("");
   const [couponCode, setCouponCode] = useState("");
+  /** Honeypot — leave empty; bots often fill it */
+  const [website, setWebsite] = useState("");
 
   useEffect(() => {
     fetch("/api/shop")
@@ -105,6 +107,7 @@ export default function CheckoutPage() {
           pincode,
           giftMessage,
           notes,
+          website,
           couponCode: couponCode.trim() || undefined,
           items: items.map((i) => ({
             productId: i.productId,
@@ -121,14 +124,9 @@ export default function CheckoutPage() {
       }
       const token =
         data.order?.publicToken || data.publicToken || data.token || "";
-      const wa = data.whatsappUrl || "";
-      const msg = data.whatsappText || data.order?.whatsappText || "";
       clear();
-      const params = new URLSearchParams();
-      if (token) params.set("token", token);
-      if (wa) params.set("whatsapp", wa);
-      if (msg) params.set("message", msg);
-      router.push(`/order/confirmed?${params.toString()}`);
+      // Only token in the URL — no PII / long WhatsApp payloads in query strings
+      router.push(`/order/confirmed?token=${encodeURIComponent(token)}`);
     } catch {
       setError("Something went wrong placing your order");
       setBusy(false);
@@ -181,6 +179,21 @@ export default function CheckoutPage() {
       </p>
 
       <form onSubmit={onSubmit} className="space-y-4">
+        <div
+          aria-hidden="true"
+          className="absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+        >
+          <label htmlFor="website">Website</label>
+          <input
+            id="website"
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+          />
+        </div>
         <div className="grid sm:grid-cols-2 gap-4">
           <div>
             <label className="label" htmlFor="name">

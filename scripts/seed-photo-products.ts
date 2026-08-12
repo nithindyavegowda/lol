@@ -1,10 +1,8 @@
 /**
- * Upsert the 8 photo-based products into SQLite without wiping the whole DB.
+ * Upsert the 8 photo-based products into the DB without wiping everything.
  * Run: npx tsx scripts/seed-photo-products.ts
  */
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "./_prisma";
 
 const catalog = [
   {

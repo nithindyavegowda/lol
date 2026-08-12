@@ -1,21 +1,65 @@
 "use client";
 
 import Link from "next/link";
-import { Suspense, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { WhatsAppIcon, YarnBallIcon } from "@/components/icons";
+
+type OrderPayload = {
+  orderNumber?: string;
+  whatsappText?: string;
+  total?: number;
+  error?: string;
+};
 
 function ConfirmedInner() {
   const sp = useSearchParams();
   const token = sp.get("token") || "";
-  const whatsapp = sp.get("whatsapp") || "";
-  const message = sp.get("message") || "";
+  const [whatsapp, setWhatsapp] = useState("");
+  const [message, setMessage] = useState("");
+  const [orderNumber, setOrderNumber] = useState("");
   const [copied, setCopied] = useState(false);
+  const [loading, setLoading] = useState(!!token);
 
   const statusHref = useMemo(
     () => (token ? `/order/${encodeURIComponent(token)}` : ""),
     [token]
   );
+
+  useEffect(() => {
+    if (!token) {
+      setLoading(false);
+      return;
+    }
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch(`/api/orders/${encodeURIComponent(token)}`);
+        const data = (await res.json()) as OrderPayload & {
+          whatsappUrl?: string;
+          shortWhatsappUrl?: string;
+        };
+        if (cancelled) return;
+        if (!res.ok) {
+          setLoading(false);
+          return;
+        }
+        setOrderNumber(data.orderNumber || "");
+        setMessage(data.whatsappText || "");
+        // Prefer short URL from API if present; else build from status page later
+        if (typeof data.shortWhatsappUrl === "string") {
+          setWhatsapp(data.shortWhatsappUrl);
+        } else if (typeof data.whatsappUrl === "string") {
+          setWhatsapp(data.whatsappUrl);
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [token]);
 
   const copy = async () => {
     if (!message) return;
@@ -33,8 +77,11 @@ function ConfirmedInner() {
       <YarnBallIcon className="w-10 h-10 mb-4 opacity-80" />
       <h1 className="font-display text-4xl">Order saved</h1>
       <p className="mt-3 opacity-85">
-        Next step: send the order on WhatsApp so Amie can confirm your slot and payment.
+        {orderNumber
+          ? `Order #${orderNumber} is saved. Next: message Amie on WhatsApp to confirm your slot and payment.`
+          : "Next step: send the order on WhatsApp so Amie can confirm your slot and payment."}
       </p>
+      {loading ? <p className="mt-4 text-sm opacity-60">Loading order…</p> : null}
 
       <div className="mt-8 flex flex-wrap gap-3">
         {whatsapp ? (
@@ -50,7 +97,7 @@ function ConfirmedInner() {
         ) : null}
         {message ? (
           <button type="button" className="btn-primary !bg-transparent" onClick={copy}>
-            {copied ? "Copied!" : "Copy message"}
+            {copied ? "Copied!" : "Copy full message"}
           </button>
         ) : null}
         {statusHref ? (

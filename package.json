@@ -6,17 +6,20 @@
     "dev": "next dev --turbopack -H 0.0.0.0 -p 1234",
     "dev:host": "next dev --turbopack -H 0.0.0.0 -p 1234",
     "tunnel": "npx ngrok http 1234",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start -H 0.0.0.0 -p 1234",
     "lint": "eslint",
-    "db:push": "prisma db push",
+    "db:push": "tsx scripts/apply-neon-schema.ts",
     "db:seed": "tsx prisma/seed.ts",
-    "db:reset": "prisma db push --force-reset && tsx prisma/seed.ts"
+    "db:setup": "tsx scripts/apply-neon-schema.ts && tsx prisma/seed.ts && tsx scripts/seed-photo-products.ts && tsx scripts/publish-real-photos-only.ts",
+    "db:reset": "tsx scripts/apply-neon-schema.ts && tsx prisma/seed.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "@prisma/adapter-neon": "^5.22.0",
     "@prisma/client": "^5.22.0",
     "bcryptjs": "^3.0.3",
     "next": "15.5.22",
@@ -25,6 +28,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "uuid": "^14.0.1",
+    "ws": "^8.21.3",
     "zod": "^4.4.3"
   },
   "devDependencies": {
@@ -36,6 +40,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/uuid": "^10.0.0",
+    "@types/ws": "^8.18.1",
     "eslint": "^9",
     "eslint-config-next": "15.5.22",
     "lighthouse": "^12.4.0",

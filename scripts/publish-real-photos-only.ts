@@ -1,6 +1,4 @@
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "./_prisma";
 
 /** Keep published only products that use real /assets/products photos */
 async function main() {

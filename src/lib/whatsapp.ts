@@ -23,6 +23,7 @@ export type OrderMessageInput = {
   items: { title: string; variantLabel?: string; qty: number; unitPrice: number }[];
 };
 
+/** Full order text for DB / email / admin — not for wa.me query strings. */
 export function buildWhatsAppOrderText(input: OrderMessageInput) {
   const lines = [
     `New LOL — Loops of Love order #${input.orderNumber}`,
@@ -50,6 +51,18 @@ export function buildWhatsAppOrderText(input: OrderMessageInput) {
   if (input.depositNote) lines.push(`Payment: ${input.depositNote}`);
   lines.push(`Track order: ${input.statusUrl}`);
   return lines.join("\n");
+}
+
+/** Short wa.me text — no address/phone PII in the URL. */
+export function buildWhatsAppShortText(input: {
+  orderNumber: string;
+  statusUrl: string;
+  total: number;
+}) {
+  return [
+    `Hi! New LOL order #${input.orderNumber} (${formatInr(input.total)}).`,
+    `Please confirm my slot — full details: ${input.statusUrl}`,
+  ].join("\n");
 }
 
 export function whatsappUrl(phone: string, text: string) {

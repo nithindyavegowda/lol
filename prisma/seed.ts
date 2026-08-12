@@ -1,7 +1,5 @@
 import bcrypt from "bcryptjs";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "../scripts/_prisma";
 
 const placeholders = [
   "/placeholders/bunny.svg",
@@ -13,8 +11,13 @@ const placeholders = [
 ];
 
 async function main() {
-  const email = process.env.ADMIN_EMAIL || "g.amie0311@gmail.com";
-  const password = process.env.ADMIN_PASSWORD || "Ammu@0311";
+  const email = process.env.ADMIN_EMAIL;
+  const password = process.env.ADMIN_PASSWORD;
+  if (!email || !password) {
+    throw new Error(
+      "Set ADMIN_EMAIL and ADMIN_PASSWORD in .env / .env.local before seeding."
+    );
+  }
   const hash = await bcrypt.hash(password, 10);
 
   await prisma.adminUser.upsert({

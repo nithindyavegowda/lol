@@ -3,12 +3,29 @@ import { randomUUID } from "crypto";
 import { prisma } from "@/lib/prisma";
 import { buildQuote, nextOrderNumber, type QuoteItemInput } from "@/lib/pricing";
 import { estimateShipDate, OPEN_ORDER_STATUSES } from "@/lib/utils";
-import { buildWhatsAppOrderText, whatsappUrl } from "@/lib/whatsapp";
+import {
+  buildWhatsAppOrderText,
+  buildWhatsAppShortText,
+  whatsappUrl,
+} from "@/lib/whatsapp";
 import { sendOrderEmail } from "@/lib/email";
+import { clientIp, rateLimit } from "@/lib/rate-limit";
 
 export async function POST(req: NextRequest) {
+  const limited = rateLimit(`orders:${clientIp(req)}`, {
+    limit: 8,
+    windowMs: 60_000,
+  });
+  if (limited) return limited;
+
   try {
     const body = await req.json();
+
+    // Honeypot — bots fill hidden fields
+    if (String(body.website || body.company || "").trim()) {
+      return NextResponse.json({ error: "Rejected" }, { status: 400 });
+    }
+
     const items = (body.items || []) as QuoteItemInput[];
 
     const customerName = String(body.customerName || "").trim();
@@ -22,6 +39,12 @@ export async function POST(req: NextRequest) {
 
     if (!customerName || !customerPhone || !addressLine || !city || !state || !pincode) {
       return NextResponse.json({ error: "Missing customer fields" }, { status: 400 });
+    }
+    if (!items.length) {
+      return NextResponse.json({ error: "Cart is empty" }, { status: 400 });
+    }
+    if (customerPhone.replace(/\D/g, "").length < 10) {
+      return NextResponse.json({ error: "Invalid phone" }, { status: 400 });
     }
 
     const quote = await buildQuote({
@@ -84,6 +107,12 @@ export async function POST(req: NextRequest) {
       })),
     });
 
+    const shortText = buildWhatsAppShortText({
+      orderNumber,
+      statusUrl,
+      total: quote.total,
+    });
+
     const order = await prisma.order.create({
       data: {
         orderNumber,
@@ -127,22 +156,24 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    const notifyTo =
-      process.env.ORDER_NOTIFY_EMAIL || "g.amie0311@gmail.com";
-    await sendOrderEmail({
-      to: notifyTo,
-      subject: `New LOL order ${orderNumber}`,
-      text: whatsappText,
-    });
+    const notifyTo = process.env.ORDER_NOTIFY_EMAIL;
+    if (notifyTo) {
+      await sendOrderEmail({
+        to: notifyTo,
+        subject: `New LOL order ${orderNumber}`,
+        text: whatsappText,
+      });
+    }
 
     const phone = quote.settings.whatsappNumber || "918884558657";
-    const wa = whatsappUrl(phone, whatsappText);
+    const wa = whatsappUrl(phone, shortText);
 
     return NextResponse.json({
-      order,
-      whatsappUrl: wa,
-      whatsappText,
+      publicToken: order.publicToken,
+      orderNumber: order.orderNumber,
       statusUrl,
+      whatsappUrl: wa,
+      // Do not return full whatsappText / customer PII to the browser redirect
     });
   } catch (e) {
     const message = e instanceof Error ? e.message : "Order failed";

@@ -9,11 +9,12 @@ Fast 2D storefront: floating nav, photographic hero, real product photos, collec
 ```bash
 cd C:\P\lol   # or your clone path
 npm install
-cp .env.example .env.local   # Windows: copy .env.example .env.local
-npx prisma db push
-npx tsx prisma/seed.ts
-npx tsx scripts/seed-photo-products.ts
-npx tsx scripts/publish-real-photos-only.ts
+copy .env.example .env.local
+# Edit .env.local:
+#   - DATABASE_URL = Neon Postgres for THIS app only (not shared with other projects)
+#   - NEXTAUTH_SECRET = long random string
+#   - ADMIN_EMAIL / ADMIN_PASSWORD = your admin login
+npm run db:setup
 npm run dev:host
 ```
 
@@ -22,17 +23,39 @@ npm run dev:host
 - Admin: http://localhost:1234/admin/login  
 - Remote preview: `npm run tunnel` (needs `dev:host` running)
 
-Production:
+### Vercel env vars (required)
+
+| Variable | Notes |
+|----------|--------|
+| `DATABASE_URL` | Neon **LOL-only** Postgres URL (pooler OK) |
+| `NEXTAUTH_SECRET` | Long random secret (not `change-me`) |
+| `NEXTAUTH_URL` | `https://your-app.vercel.app` |
+| `AUTH_URL` | Same as `NEXTAUTH_URL` |
+| `NEXT_PUBLIC_SITE_URL` | Same HTTPS origin (not localhost) |
+| `ADMIN_EMAIL` / `ADMIN_PASSWORD` | Used when seeding; change after first deploy |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | e.g. `918884558657` |
+| `ORDER_NOTIFY_EMAIL` | Optional merchant notify inbox |
+| `RESEND_API_KEY` | Optional order emails |
+| `CLOUDINARY_*` | **Required on Vercel** for admin image uploads |
+
+Deploy steps:
+
+1. Import `nithindyavegowda/lol` on Vercel  
+2. Set the env vars above  
+3. Deploy — build runs `prisma generate && next build`  
+4. Seed once from your machine with the **same** `DATABASE_URL`: `npm run db:setup`
+
+Production locally:
 
 ```bash
 npm run build
 npm run start
 ```
 
-## Admin defaults
+## Admin
 
-- Email: `g.amie0311@gmail.com`
-- Password: `Ammu@0311` (change after first login / via env)
+- Set `ADMIN_EMAIL` and `ADMIN_PASSWORD` in `.env.local` before `npm run db:setup`  
+- Login: http://localhost:1234/admin/login  
 - WhatsApp orders: `8884558657` → `wa.me/918884558657`
 
 ## Test coupons
@@ -43,13 +66,16 @@ npm run start
 ## Stack
 
 - Next.js 15 + TypeScript + Tailwind  
-- Prisma + SQLite (`prisma/dev.db`, gitignored)  
+- Prisma + Neon Postgres (`DATABASE_URL`) via serverless WebSocket adapter  
 - NextAuth credentials (single admin)  
 - Product photos in `public/assets/products/`  
-- Orders via WhatsApp (`wa.me`); optional Resend email if `RESEND_API_KEY` is set  
+- Orders via short WhatsApp link + `/order/[token]` status page  
+- Admin uploads: Cloudinary in production; local `public/uploads` only in development  
 
 ## Notes
 
-- `.env*` and `prisma/*.db` are gitignored — copy from `.env.example`  
+- `.env*` is gitignored — never commit real secrets  
+- Neon Postgres via `DATABASE_URL` (prefer a dedicated Neon project for LOL)  
+- `POST /api/orders` is rate-limited (in-memory per instance) + honeypot field  
 - Only products with real `/assets/products/` images are published by `publish-real-photos-only.ts`  
 - Large `spiderman.glb` is not in git (not needed for 2D hero)
