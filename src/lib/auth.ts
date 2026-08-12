@@ -7,9 +7,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   trustHost: true,
   providers: [
     Credentials({
+      name: "credentials",
       credentials: {
-        email: {},
-        password: {},
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
       },
       authorize: async (credentials) => {
         const email = String(credentials?.email || "").toLowerCase().trim();
@@ -41,5 +42,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return session;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  // Auth.js v5 reads AUTH_SECRET; keep NEXTAUTH_SECRET as fallback
+  secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
 });

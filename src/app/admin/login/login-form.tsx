@@ -15,22 +15,43 @@ export default function AdminLoginPage() {
     e.preventDefault();
     setLoading(true);
     setError("");
-    const res = await signIn("credentials", {
-      email,
-      password,
-      redirect: false,
-    });
-    setLoading(false);
-    if (res?.error) {
-      setError("Invalid email or password");
-      return;
+    try {
+      const res = await signIn("credentials", {
+        email: email.trim(),
+        password,
+        redirect: false,
+        callbackUrl: "/admin",
+      });
+
+      if (!res) {
+        setError("Sign-in failed (no response). Check AUTH_URL / NEXTAUTH_URL on Vercel.");
+        return;
+      }
+      if (res.error) {
+        setError(
+          res.error === "CredentialsSignin"
+            ? "Invalid email or password"
+            : `Sign-in error: ${res.error}`
+        );
+        return;
+      }
+      if (res.ok === false) {
+        setError("Sign-in was rejected. Check admin credentials and DATABASE_URL.");
+        return;
+      }
+
+      const callback =
+        typeof window !== "undefined"
+          ? new URLSearchParams(window.location.search).get("callbackUrl")
+          : null;
+      // Full navigation so the session cookie is picked up by middleware
+      window.location.assign(callback || res.url || "/admin");
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Sign-in failed";
+      setError(message);
+    } finally {
+      setLoading(false);
     }
-    const callback =
-      typeof window !== "undefined"
-        ? new URLSearchParams(window.location.search).get("callbackUrl")
-        : null;
-    router.push(callback || "/admin");
-    router.refresh();
   }
 
   return (

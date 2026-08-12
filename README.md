@@ -31,9 +31,8 @@ Template in git: `.env.vercel.example`.
 | Variable | Notes |
 |----------|--------|
 | `DATABASE_URL` | Neon LOL Postgres URL (pooler OK) |
-| `NEXTAUTH_SECRET` | Long random secret |
-| `NEXTAUTH_URL` | `https://your-app.vercel.app` (not localhost) |
-| `AUTH_URL` | Same as `NEXTAUTH_URL` |
+| `NEXTAUTH_SECRET` / `AUTH_SECRET` | Same long random secret (set both) |
+| `NEXTAUTH_URL` / `AUTH_URL` | Exact site URL e.g. `https://loopoflove-crochet.vercel.app` |
 | `NEXT_PUBLIC_SITE_URL` | Same HTTPS origin |
 | `ADMIN_EMAIL` / `ADMIN_PASSWORD` | Admin login |
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | e.g. `918884558657` |
