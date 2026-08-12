@@ -25,26 +25,30 @@ npm run dev:host
 
 ### Vercel env vars (required)
 
+Use **Import .env file** on Vercel and select local `C:\P\lol\.env.vercel` (gitignored — has real secrets).  
+Template in git: `.env.vercel.example`.
+
 | Variable | Notes |
 |----------|--------|
-| `DATABASE_URL` | Neon **LOL-only** Postgres URL (pooler OK) |
-| `NEXTAUTH_SECRET` | Long random secret (not `change-me`) |
-| `NEXTAUTH_URL` | `https://your-app.vercel.app` |
+| `DATABASE_URL` | Neon LOL Postgres URL (pooler OK) |
+| `NEXTAUTH_SECRET` | Long random secret |
+| `NEXTAUTH_URL` | `https://your-app.vercel.app` (not localhost) |
 | `AUTH_URL` | Same as `NEXTAUTH_URL` |
-| `NEXT_PUBLIC_SITE_URL` | Same HTTPS origin (not localhost) |
-| `ADMIN_EMAIL` / `ADMIN_PASSWORD` | Used when seeding; change after first deploy |
+| `NEXT_PUBLIC_SITE_URL` | Same HTTPS origin |
+| `ADMIN_EMAIL` / `ADMIN_PASSWORD` | Admin login |
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | e.g. `918884558657` |
 | `ORDER_NOTIFY_EMAIL` | Optional merchant notify inbox |
 | `RESEND_API_KEY` | Optional order emails |
-| `CLOUDINARY_*` | **Required on Vercel** for admin image uploads |
+| `CLOUDINARY_*` | Required on Vercel for admin image uploads |
 
 Deploy steps:
 
 1. Import `nithindyavegowda/lol` on Vercel  
-2. **Before first deploy**, add all env vars below (Production + Preview) — missing `DATABASE_URL` fails the build  
-3. Deploy — build runs `prisma generate && next build`  
-4. Seed once from your machine with the **same** `DATABASE_URL`: `npm run db:setup`  
-5. After you know the real URL, set `NEXTAUTH_URL`, `AUTH_URL`, and `NEXT_PUBLIC_SITE_URL` to `https://your-app.vercel.app` and **Redeploy**
+2. **Before deploy**, Environment Variables → **Import** → choose `.env.vercel`  
+3. Confirm Production + Preview are checked  
+4. Deploy — build runs `prisma generate && next build`  
+5. If the live URL differs from `https://lol.vercel.app`, edit `NEXTAUTH_URL`, `AUTH_URL`, `NEXT_PUBLIC_SITE_URL` and **Redeploy**  
+6. DB is already seeded on Neon; only re-run `npm run db:setup` if products are missing
 
 Production locally:
 

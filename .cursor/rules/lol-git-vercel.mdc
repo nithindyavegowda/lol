@@ -1,0 +1,12 @@
+---
+description: LOL project — keep GitHub updated; never commit secrets
+alwaysApply: true
+---
+
+# LOL (C:\P\lol) workflow
+
+- Work only in `C:\P\lol` unless the user says otherwise. Do not modify `C:\P\SCOOLZ`.
+- After meaningful code/docs changes, commit and push to `https://github.com/nithindyavegowda/lol` (ask first only if the user previously said not to push).
+- Never commit `.env`, `.env.local`, or `.env.vercel` (real secrets). Safe to commit: `.env.example`, `.env.vercel.example`.
+- Vercel import file for the user: `C:\P\lol\.env.vercel` (local only).
+- Production URLs in Vercel must be HTTPS (`NEXTAUTH_URL`, `AUTH_URL`, `NEXT_PUBLIC_SITE_URL`), not localhost.
