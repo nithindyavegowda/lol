@@ -43,22 +43,29 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const [featured, testimonials] = await Promise.all([
-    prisma.product.findMany({
-      where: {
-        status: "published",
-        images: { some: { url: { startsWith: "/assets/products/" } } },
-      },
-      include: { images: { orderBy: { sortOrder: "asc" }, take: 2 } },
-      orderBy: [{ featured: "desc" }, { updatedAt: "desc" }],
-      take: 12,
-    }),
-    prisma.testimonial.findMany({
-      where: { published: true },
-      orderBy: { sortOrder: "asc" },
-      take: 3,
-    }),
-  ]);
+  let featured: Awaited<ReturnType<typeof prisma.product.findMany>> = [];
+  let testimonials: Awaited<ReturnType<typeof prisma.testimonial.findMany>> = [];
+
+  try {
+    [featured, testimonials] = await Promise.all([
+      prisma.product.findMany({
+        where: {
+          status: "published",
+          images: { some: { url: { startsWith: "/assets/products/" } } },
+        },
+        include: { images: { orderBy: { sortOrder: "asc" }, take: 2 } },
+        orderBy: [{ featured: "desc" }, { updatedAt: "desc" }],
+        take: 12,
+      }),
+      prisma.testimonial.findMany({
+        where: { published: true },
+        orderBy: { sortOrder: "asc" },
+        take: 3,
+      }),
+    ]);
+  } catch (e) {
+    console.error("HomePage DB error:", e);
+  }
 
   return (
     <div className="pb-2">
